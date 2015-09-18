@@ -18,7 +18,7 @@ use vars qw(%seen %refcnt @dump @fixup $INDENT $UTF8 $PARAM_NAME);
 
 $INDENT     = "  "      unless defined $INDENT;
 $PARAM_NAME = 'content' unless defined $PARAM_NAME;
-$UTF8       = 0;
+$UTF8       = 0         unless defined $UTF8;
 
 my %fh = (
           '*main::STDIN'  => '$*IN',
