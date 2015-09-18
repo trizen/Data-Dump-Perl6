@@ -26,6 +26,8 @@ my %h = (
 $h{z} = ${$h{c}};
 $h{x} = ${$h{e}};
 
+#print STDERR dump_perl6(\%h);
+
 ok(nl(dump_perl6(\%h)), <<'EOT');
 do {
   my $a = {
@@ -37,7 +39,7 @@ do {
     x => Any,
     z => Any,
   };
-  $a<b> = $a<a>;
+  $a<b>.content = $a<a>;
   $a<c> = $a<b>;
   $a<d> = $a<a>;
   $a<x> = $a<e>.content;

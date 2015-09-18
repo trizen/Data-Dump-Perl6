@@ -132,14 +132,8 @@ sub _dump {
             $refcnt{$name}++;
 
             # Remove the "$PARAM_NAME" from blessed objects
-            if (not blessed($rval)) {
-                s/\.\Q$PARAM_NAME\E\z// for @{$idx};
-            }
-            else {
-                $idx->[-1] =~ s/\.\Q$PARAM_NAME\E\z//;
-            }
-
             if (blessed($rval)) {
+                $idx->[-1] =~ s/\.\Q$PARAM_NAME\E\z//;
                 $sref =~ s/\.\Q$PARAM_NAME\E\z//;
             }
 
